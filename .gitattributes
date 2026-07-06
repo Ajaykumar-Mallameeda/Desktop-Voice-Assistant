@@ -1,0 +1,10 @@
+* text=auto
+*.py text diff=python
+*.md text diff=markdown
+*.txt text
+*.yml text
+*.yaml text
+*.pdf binary
+*.ico binary
+*.png binary
+*.jpg binary
