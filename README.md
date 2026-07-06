@@ -1,244 +1,143 @@
-# 🎙️ Intelligent Desktop Voice Assistant
+# Desktop Voice Assistant
 
-A Python-based AI-powered desktop voice assistant designed for hands-free system interaction, application automation, intelligent query handling, and voice-driven desktop workflows.
+![Status](https://img.shields.io/badge/Status-Active-059669?style=flat)
+![License](https://img.shields.io/badge/License-MIT-2563EB?style=flat)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-2026--07-6B7280?style=flat)
 
----
+![Python](https://img.shields.io/badge/Python-0D9488?style=flat&logo=python&logoColor=white)
 
-# 📌 Overview
-
-The **Intelligent Desktop Voice Assistant** is a lightweight desktop automation platform that combines speech recognition, natural language processing, and command orchestration to enable seamless voice-controlled interaction with a computer system.
-
-The assistant supports:
-
-* Voice-driven desktop interaction
-* Application automation
-* Speech-to-text processing
-* Text-to-speech responses
-* Browser and utility control
-* Intelligent command execution
-* Modular command routing
-
-The project demonstrates practical integration of NLP workflows, real-time audio processing, and desktop automation pipelines.
+A Python-based desktop voice assistant for hands-free system interaction, application automation, and voice-driven desktop workflows.
 
 ---
 
-# 🏗️ System Architecture
+## Overview
 
-## High-Level Workflow
+**The problem:** Desktop automation typically requires manual input — clicking, typing, navigating menus. Voice-driven interaction can streamline common tasks, but most voice assistants are cloud-dependent or tied to specific ecosystems.
 
-```text
-User Voice Input
-        ↓
-Speech Recognition Engine
-        ↓
-Speech-to-Text Processing
-        ↓
-Command Interpretation
-        ↓
-Action Routing Engine
-        ↓
-Desktop/System Automation
-        ↓
-Text-to-Speech Response
-```
+**The approach:** A lightweight, offline-capable desktop assistant that combines speech recognition, natural language command parsing, and system automation. The assistant listens for voice commands, interprets intent through keyword matching, and executes actions — from launching applications to controlling browser workflows.
+
+**Architecture:** Four-module pipeline — speech recognition (`speech_to_text.py`), command routing (`action.py`), speech synthesis (`text_to_speech.py`), and the main orchestration layer (`Allen.py`) with a Tkinter GUI.
 
 ---
 
-# ⚙️ Core Features
+## Features
 
-## 🎤 Voice Interaction
-
-* Real-time voice command processing
-* Speech-to-text conversion
-* Hands-free desktop control
-* Interactive assistant responses
-
-## 🧠 Intelligent Command Handling
-
-* Natural language command interpretation
-* Modular action execution
-* Utility and browser automation
-* Dynamic task routing
-
-## 🖥️ Desktop Automation
-
-* Application launching
-* System interaction workflows
-* Browser-based operations
-* User productivity automation
-
-## 🔊 Audio Processing
-
-* Text-to-speech synthesis
-* Voice feedback generation
-* Conversational interaction workflow
+- **Voice command processing** — Real-time microphone input with speech-to-text conversion
+- **Application launching** — Open Chrome, YouTube, Google Maps, and other tools by voice
+- **Browser automation** — Navigate to Spotify, WhatsApp, Gmail, Google Calendar, Zoom, and more
+- **System information** — Voice-query current time
+- **Text-based input** — Alternative keyboard input mode alongside voice
+- **Conversation history** — Scrollable chat interface showing user and assistant messages
 
 ---
 
-# 🧩 Repository Structure
+## Technology Stack
 
-```text
-Desktop-Voice-Assistant/
-│
-├── Allen.py                 # Main assistant entry point
-├── action.py                # Command execution engine
-├── speech_to_text.py        # Voice recognition pipeline
-├── text_to_speech.py        # Speech synthesis module
-└── README.md
-```
+| Technology | Purpose |
+|------------|---------|
+| Python | Core language |
+| SpeechRecognition | Speech-to-text via Google Web Speech API |
+| pyttsx3 | Offline text-to-speech engine |
+| Tkinter | Desktop GUI framework |
+| Webbrowser | System browser integration |
 
 ---
 
-# 🧠 Processing Pipeline
+## Getting Started
 
-## 1. Speech Recognition
+### Prerequisites
 
-The assistant captures microphone input and converts speech into text using a speech-recognition workflow.
+- Python 3.7 or later
+- Microphone (for voice input)
 
----
-
-## 2. Command Interpretation
-
-The recognized command is processed and routed through the action engine to determine the required system operation.
-
-Supported workflows include:
-
-* Opening applications
-* Browser interaction
-* Utility commands
-* System operations
-* Information retrieval
-
----
-
-## 3. Response Generation
-
-The assistant generates voice-based responses using text-to-speech synthesis.
-
----
-
-# 🧪 Technologies Used
-
-## Programming
-
-* Python
-
-## NLP & Audio
-
-* Speech Recognition
-* Text-to-Speech (TTS)
-* Natural Language Processing
-
-## Automation
-
-* Desktop Automation
-* Command Routing
-* Browser Interaction
-
----
-
-# 📂 Important Modules
-
-## `Allen.py`
-
-Main execution file responsible for initializing the assistant and coordinating workflows.
-
-## `speech_to_text.py`
-
-Handles microphone input and speech recognition processing.
-
-## `text_to_speech.py`
-
-Generates voice-based assistant responses.
-
-## `action.py`
-
-Processes interpreted commands and executes automation tasks.
-
----
-
-# 🚀 Setup & Installation
-
-## Clone Repository
+### Installation
 
 ```bash
-git clone https://github.com/112301021/Desktop-Voice-Assistant.git
+# Clone the repository
+git clone https://github.com/Ajaykumar-Mallameeda/Desktop-Voice-Assistant.git
 cd Desktop-Voice-Assistant
-```
 
----
-
-## Install Dependencies
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-If requirements are unavailable, install manually:
-
-```bash
-pip install speechrecognition pyttsx3 pyaudio
-```
-
----
-
-## Run the Assistant
-
-```bash
+# Run the assistant
 python Allen.py
 ```
 
----
+### Dependencies
 
-# 📊 Example Workflow
+See [requirements.txt](./requirements.txt) for the full list:
 
-## Example Commands
-
-* “Open Chrome”
-* “Search the web”
-* “Tell me the time”
-* “Launch application”
-* “Play music”
-
-The assistant processes the command and executes the associated desktop operation.
+- `speechrecognition` — microphone input and speech-to-text
+- `pyttsx3` — text-to-speech synthesis
+- `pyaudio` — audio I/O for microphone access
+- `Pillow` — image handling for GUI
+- `pipwin` — Windows audio dependency helper (Windows only)
 
 ---
 
-# 📈 Engineering Focus
+## Project Structure
 
-This project explores:
-
-* Real-time speech processing
-* Voice-driven system interaction
-* NLP-based command interpretation
-* Desktop automation workflows
-* Human-computer interaction systems
-* Lightweight AI assistants
-
----
-
-# 🛠️ Future Improvements
-
-Potential future enhancements:
-
-* Wake-word detection
-* LLM-powered conversational AI
-* Context-aware memory
-* Multi-language support
-* GUI dashboard integration
-* Cloud-based speech inference
-* Async voice processing pipeline
-* Smart task scheduling
+```
+Desktop-Voice-Assistant/
+├── Allen.py                 # Main entry point and GUI
+├── action.py                # Command routing and execution
+├── speech_to_text.py        # Speech recognition module
+├── text_to_speech.py        # Speech synthesis module
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
 
 ---
 
-# 👨‍💻 Author
+## Usage
 
-Ajay Kumar Mallameeda
-Indian Institute of Technology Palakkad
+Run the assistant:
+
+```bash
+python Desktop\ voice\ assistant/Allen.py
+```
+
+The GUI window opens with an ASK button (voice input), a SEND button (text input), and a DELETE button (clear chat).
+
+**Example commands:**
+- "What is your name"
+- "What is the time"
+- "Open YouTube"
+- "Play music allen"
+- "Open Google"
+- "Open WhatsApp"
+- "Shutdown"
 
 ---
 
-# 📜 License
+## Known Limitations
 
-This project is intended for academic and personal learning purposes.
+- Hardcoded image path in the GUI — currently points to a local file that doesn't exist on other machines
+- Module-level function calls in `speech_to_text.py` and `text_to_speech.py` execute on import
+- Single-threaded — voice recognition blocks the UI during processing
+- Keyword-based command matching (no NLP/LLM integration)
+
+These are documented as areas for future improvement.
+
+---
+
+## Lessons Learned
+
+- **Separation of concerns** — Splitting STT, TTS, and action routing into separate modules made the system testable and extensible. Adding new commands requires only editing `action.py`.
+- **Offline vs. cloud trade-offs** — Using `pyttsx3` for offline TTS (no internet required) meant lower voice quality but higher reliability. The `speech_recognition` library uses Google's cloud API, introducing a network dependency for input.
+- **GUI frameworks matter** — Tkinter is built-in and lightweight but limited in modern UI capabilities. A web-based interface would enable richer interactions.
+
+---
+
+## License & Author
+
+**License:** This project is licensed under the MIT License — see the [LICENSE](./LICENSE) file for details.
+
+**Author:** [Ajaykumar Mallameeda](https://github.com/Ajaykumar-Mallameeda) · Indian Institute of Technology Palakkad
+
+---
+
+*Built at IIT Palakkad as part of a continuous learning journey in AI and Backend Engineering.*
